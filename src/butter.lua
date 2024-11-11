@@ -82,7 +82,7 @@ local function createUi()
     Header.Size = UDim2.new(0, 150, 0, 50)
     Header.Position = UDim2.new(0.1, 0, 0.1, 0)
     Header.BackgroundColor3 = BtnBg
-    Header.Text = "ButterLoader v1"
+    Header.Text = "ButterLoader v1 | Universal"
     Header.Parent = butterUi
     Header.MouseButton1Click:Connect(function() print("ButterLoader") end)
 
