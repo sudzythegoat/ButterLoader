@@ -10,6 +10,23 @@ butterUi.Name = "Butter Loader v1"
 butterUi.Parent = game.CoreGui
 
 local BtnBg = Color3.fromRGB(224, 245, 66)
+local Black = Color3.fromRGB(0, 0, 0)
+local Players = game:GetService("Players")
+
+local function light(character)
+    if character:FindFirstChildOfClass("Highlight") then return end
+    local esplight = Instance.new("Highlight")
+    esplight.Parent = character
+    esplight.FillColor = BtnBg
+    esplight.OutlineColor = Black
+end
+
+local function esp()
+    for _, player in ipairs(Players:GetPlayers()) do
+        local character = player.Character or player.CharacterAdded:Wait()
+        light(character)
+    end
+end
 
 local function createUi()
     local Header = Instance.new("TextButton")
@@ -44,9 +61,17 @@ local function createUi()
     AimButton.Parent = butterUi
     AimButton.MouseButton1Click:Connect(aimbot)
 
+    local SprintButton = Instance.new("TextButton")
+    SprintButton.Size = UDim2.new(0, 150, 0, 50)
+    SprintButton.Position = UDim2.new(0.1, 0, 0.8, 0)
+    SprintButton.BackgroundColor3 = BtnBg
+    SprintButton.Text = "Shift 2 Sprint"
+    SprintButton.Parent = butterUi
+    SprintButton.MouseButton1Click:Connect(s2s)
+
     local EndButton = Instance.new("TextButton")
     EndButton.Size = UDim2.new(0, 150, 0, 50)
-    EndButton.Position = UDim2.new(0.1, 0, 0.80, 0)
+    EndButton.Position = UDim2.new(0.1, 0, 0.95, 0)
     EndButton.BackgroundColor3 = BtnBg
     EndButton.Text = "Minimize"
     EndButton.Parent = butterUi
