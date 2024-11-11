@@ -72,6 +72,11 @@ local function aimbot()
     Aimbot.Load()
 end
 
+local function s2s()
+    local shift2sprint = loadstring(game:HttpGet("https://raw.githubusercontent.com/Dynamic155/Roblox-SHIFT-To-Sprint/main/ShiftToSprint.lua"))()
+    shift2sprint.Load()
+end
+
 local function createUi()
     local Header = Instance.new("TextButton")
     Header.Size = UDim2.new(0, 150, 0, 50)
