@@ -8,9 +8,9 @@ Welcome to ButterLoader! ButterLoader is a unique Roblox script that has multipl
 - Fly
 
 **Todo:**
-- [] Add more mods
-- [] Add functions for current mods
-- [] Updateloadstring
+-[] Add more mods
+-[] Add functions for current mods
+-[] Update loadstring.lua
 
 **Current Version:**
 v1.0.2
