@@ -67,6 +67,11 @@ local function fly()
     end
 end
 
+local function aimbot()
+    local Aimbot = loadstring(game:HttpGet("https://raw.githubusercontent.com/Exunys/Aimbot-V3/main/src/Aimbot.lua"))()
+    Aimbot.Load()
+end
+
 local function createUi()
     local Header = Instance.new("TextButton")
     Header.Size = UDim2.new(0, 150, 0, 50)
