@@ -23,7 +23,7 @@ end
 
 local function esp()
     for _, player in ipairs(Players:GetPlayers()) do
-        local character = player.Character or player.CharacterAdded:Wait()
+        local character = player.Character
         light(character)
     end
 end
