@@ -74,7 +74,7 @@ local function createUi()
     Header.BackgroundColor3 = BtnBg
     Header.Text = "ButterLoader v1"
     Header.Parent = butterUi
-    Header.MouseButton1Click:Connect(function() print("ButterLoader"))
+    Header.MouseButton1Click:Connect(function() print("ButterLoader") end)
 
     local EspButton = Instance.new("TextButton")
     EspButton.Size = UDim2.new(0, 150, 0, 50)
