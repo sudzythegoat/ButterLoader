@@ -28,6 +28,38 @@ local function esp()
     end
 end
 
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local flying = false
+
+local function startFly()
+    local bodyVelocity = Instance.new("BodyVelocity")
+    bodyVelocity.MaxForce = Vector3.new(0, math.huge, 0)
+    bodyVelocity.Velocity = Vector3.new(0, 50, 0)
+    bodyVelocity.Parent = character:WaitForChild("HumanoidRootPart")
+    return bodyVelocity
+end
+
+-- Function to stop flying
+local function stopFly(bodyVelocity)
+    bodyVelocity:Destroy()
+end
+
+local userInputService = game:GetService("UserInputService")
+
+userInputService.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+
+    if input.KeyCode == Enum.KeyCode.F then
+        flying = not flying
+        if flying then
+            bodyVelocity = startFly()
+        else
+            stopFly(bodyVelocity)
+        end
+    end
+end)
+
 local function createUi()
     local Header = Instance.new("TextButton")
     Header.Size = UDim2.new(0, 150, 0, 50)
