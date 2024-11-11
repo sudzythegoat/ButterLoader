@@ -122,9 +122,11 @@ local function createUi()
     ModButton.Size = UDim2.new(0, 150, 0, 50)
     ModButton.Position = UDim2.new(0.1, 0, 0.8, 0)
     ModButton.BackgroundColor3 = BtnBg
-    ModButton.Text = "Shift 2 Sprint"
+    ModButton.Text = "Mod"
     ModButton.Parent = butterUi
     ModButton.MouseButton1Click:Connect(s2s)
+
+    local 
 
     local EndButton = Instance.new("TextButton")
     EndButton.Size = UDim2.new(0, 150, 0, 50)
